@@ -15,7 +15,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:ci": "",
+    "test:ci": "CI=true npm test",
     "eject": "react-scripts eject",
     "lint": "eslint --fix",
     "pretty": "prettier --write .",
