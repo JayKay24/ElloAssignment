@@ -1,0 +1,15 @@
+name: Ello Assignment workflow
+
+on:
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install deps & Run tests
+        run: |
+          npm ci,
+          npm run test:ci
