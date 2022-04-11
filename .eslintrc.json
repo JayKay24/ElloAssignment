@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es6": true,
+    "node": true
   },
   "extends": ["plugin:react/recommended", "airbnb"],
   "parserOptions": {
@@ -13,6 +14,8 @@
   },
   "plugins": ["react", "prettier"],
   "rules": {
+    "semi": "warn",
+    "comma-dangle": "warn",
     "prettier/prettier": "error",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   }
