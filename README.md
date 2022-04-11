@@ -1,4 +1,4 @@
-![ello-assignment](https://github.com/JayKay24/ElloAssignment/actions/workflows/ello.yaml/badge.svg)
+![test-ello-challenge](https://github.com/JayKay24/ElloAssignment/actions/workflows/test-ello-challenge.yaml/badge.svg)
 
 # Ello - Full Stack Engineer coding challenge assignment
 
