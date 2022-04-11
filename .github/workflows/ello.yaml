@@ -1,15 +1,24 @@
 name: ello-assignment
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches: [main, develop]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
-      - name: Install deps & Run tests
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+          cache: 'npm'
+      - name: Install deps, Build, Run tests
         run: |
           npm install,
+          npm run build,
           npm run test:ci
