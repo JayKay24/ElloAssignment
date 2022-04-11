@@ -2,8 +2,7 @@ name: ello-assignment
 
 on:
   push:
-    branches:
-      - main
+    branches: [main, develop]
   pull_request:
     branches: [main, develop]
 
@@ -17,8 +16,9 @@ jobs:
         with:
           node-version: '14'
           cache: 'npm'
-      - name: Install deps, Build, Run tests
-        run: |
-          npm install,
-          npm run build,
-          npm run test:ci
+      - name: Install deps
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Test
+        run: npm run test
