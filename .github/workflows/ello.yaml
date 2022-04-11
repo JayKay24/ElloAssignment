@@ -1,4 +1,4 @@
-name: Ello Assignment workflow
+name: ello-assignment
 
 on:
   pull_request:

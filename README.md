@@ -1,6 +1,9 @@
+![ello-assignment](https://github.com/JayKay24/ElloAssignment/actions/workflows/ello.yaml/badge.svg)
+
 # Ello - Full Stack Engineer coding challenge assignment
 
 ## Challenge
+
 In this code challenge you will build a ReactJS web app from the ground up. You have to setup a GraphQL client to query our GraphQL API endpoint https://fullstack-engineer-test-n4ouilzfna-uc.a.run.app/graphql. The API will return a book object. You can learn more about GraphQL here https://graphql.org/learn/.
 
 The book has a field called pages which is an array of page objects. The page objects contain a field called content which is the page text and another field called tokens which is an array of tokenized page text.
@@ -65,5 +68,4 @@ Make sure to make the text large enough to be clickable. Also take into account 
 
 Create a user interface for the book. It should show the left and right pages on a single view, there should be some navigation button that will allow a user to move to the next double page. This should work in tandem with Challenge 1, i.e. The content on each page should be clickable. Please note that some pages might have no content and that is okay; just show a blank page. The UI doesn't have to be complex. Avoid CSS frameworks.
 
-***
-
+---
