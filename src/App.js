@@ -1,5 +1,9 @@
 import React from 'react';
+// eslint-disable-next-line prettier/prettier
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+
+import Content from './components/Content';
+import ErrorBoundary from './components/ErrorBoundary';
 
 import StyledContainer from './components/styled/StyledContainer';
 import StyledHeader from './components/styled/StyledHeader';
@@ -18,7 +22,11 @@ function App() {
         <StyledHeader>
           <StyledH1>Ello Challenge</StyledH1>
         </StyledHeader>
-        <StyledMain>Main</StyledMain>
+        <StyledMain>
+          <ErrorBoundary>
+            <Content />
+          </ErrorBoundary>
+        </StyledMain>
       </StyledContainer>
     </ApolloProvider>
   );

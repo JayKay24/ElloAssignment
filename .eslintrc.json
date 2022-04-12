@@ -17,6 +17,7 @@
     "semi": "warn",
     "comma-dangle": "warn",
     "prettier/prettier": "error",
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/forbid-prop-types": 0
   }
 }
