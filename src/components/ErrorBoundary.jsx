@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import ErrorScreen from './ErrorScreen';
+
 class ErrorBoundary extends Component {
   constructor() {
     super();
@@ -13,16 +15,13 @@ class ErrorBoundary extends Component {
 
   render() {
     const { error } = this.state;
-    // eslint-disable-next-line no-unused-vars
-    const { children, fallback } = this.props;
+    const { children } = this.props;
 
-    if (error) return <fallback error={error} />;
-    return children;
+    return error ? <ErrorScreen error={error} /> : children;
   }
 }
 
 ErrorBoundary.propTypes = {
-  fallback: PropTypes.object.isRequired,
   children: PropTypes.object.isRequired,
 };
 

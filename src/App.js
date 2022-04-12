@@ -4,7 +4,6 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
 import Content from './components/Content';
 import ErrorBoundary from './components/ErrorBoundary';
-import ErrorScreen from './components/ErrorScreen';
 
 import StyledContainer from './components/styled/StyledContainer';
 import StyledHeader from './components/styled/StyledHeader';
@@ -24,7 +23,7 @@ function App() {
           <StyledH1>Ello Challenge</StyledH1>
         </StyledHeader>
         <StyledMain>
-          <ErrorBoundary fallback={ErrorScreen}>
+          <ErrorBoundary>
             <Content />
           </ErrorBoundary>
         </StyledMain>
