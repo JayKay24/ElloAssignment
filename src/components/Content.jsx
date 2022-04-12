@@ -6,11 +6,10 @@ const BOOK = gql`
     book {
       pages {
         content
-        pageIndex {
-          token {
-            position
-            value
-          }
+        pageIndex
+        tokens {
+          position
+          value
         }
       }
     }
