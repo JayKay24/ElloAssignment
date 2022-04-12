@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { gql, useQuery } from '@apollo/client';
-import { v4 as uuid } from 'uuid';
 
 import List from './List';
 
@@ -20,8 +19,6 @@ const BOOK = gql`
 `;
 
 function Content() {
-  const [pages, setPages] = useState([]);
-
   const { loading: bookLoading, error: bookError, data } = useQuery(BOOK);
 
   const book = data && data.book;
@@ -30,13 +27,7 @@ function Content() {
 
   if (bookLoading) return <div>Loading...</div>;
 
-  if (book) {
-    const modifiedPages = book.pages.map((page) => ({ id: uuid(), ...page }));
-
-    setPages(modifiedPages);
-  }
-
-  return <List pages={pages} />;
+  return <List pages={book.pages} />;
 }
 
 export default Content;
