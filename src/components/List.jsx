@@ -1,7 +1,9 @@
+/* eslint-disable prettier/prettier */
 import React, { useState } from 'react';
-import { v4 as uuid } from 'uuid';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import DoublePage from './DoublePage';
+import Token from './Token';
 
 import StyledButtonContainer from './styled/StyledButtonContainer';
 import StyledButtonLarge from './styled/StyledButtonLarge';
@@ -17,10 +19,7 @@ import StyledButtonLarge from './styled/StyledButtonLarge';
  */
 function extractDoublePage(originalPages, startIdx, pagesPerView = 2) {
   // Add 1 to ensure slice is at least two elements
-  const pages = originalPages.slice(startIdx, startIdx + pagesPerView);
-
-  // Provide a unique value for react 'key' prop
-  return pages.map((page) => ({ id: uuid(), ...page }));
+  return originalPages.slice(startIdx, startIdx + pagesPerView);
 }
 
 function List({ pages }) {
@@ -37,13 +36,20 @@ function List({ pages }) {
   };
 
   return (
-    <section>
-      <DoublePage doublePage={doublePages} />
-      <StyledButtonContainer>
-        <StyledButtonLarge onClick={decrementPageNum}>Prev</StyledButtonLarge>
-        <StyledButtonLarge onClick={incrementPageNum}>Next</StyledButtonLarge>
-      </StyledButtonContainer>
-    </section>
+    <Router>
+      <Route exact path="/">
+        <section>
+          <DoublePage doublePage={doublePages} />
+          <StyledButtonContainer>
+            <StyledButtonLarge onClick={decrementPageNum}>Prev</StyledButtonLarge>
+            <StyledButtonLarge onClick={incrementPageNum}>Next</StyledButtonLarge>
+          </StyledButtonContainer>
+        </section>
+      </Route>
+      <Route path="/token/:value">
+        <Token />
+      </Route>
+    </Router>
   );
 }
 
