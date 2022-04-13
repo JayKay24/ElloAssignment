@@ -1,9 +1,13 @@
 import React from 'react';
 
-import StyledItem from './styled/StyledItem';
+import StyledPage from './styled/StyledPage';
 
 function Page({ page }) {
-  return <StyledItem>{page.content}</StyledItem>;
+  return (
+    <StyledPage>
+      <span>{page.content}</span>
+    </StyledPage>
+  );
 }
 
 export default Page;

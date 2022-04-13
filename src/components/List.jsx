@@ -3,6 +3,9 @@ import { v4 as uuid } from 'uuid';
 
 import DoublePage from './DoublePage';
 
+import StyledButtonContainer from './styled/StyledButtonContainer';
+import StyledButtonLarge from './styled/StyledButtonLarge';
+
 /**
  * Return an array of <= 2 elements to be used to display a
  * Book view
@@ -35,13 +38,11 @@ function List({ pages }) {
 
   return (
     <section>
-      <button type="button" onClick={decrementPageNum}>
-        Prev
-      </button>
-      <button type="button" onClick={incrementPageNum}>
-        Next
-      </button>
       <DoublePage doublePage={doublePages} />
+      <StyledButtonContainer>
+        <StyledButtonLarge onClick={decrementPageNum}>Prev</StyledButtonLarge>
+        <StyledButtonLarge onClick={incrementPageNum}>Next</StyledButtonLarge>
+      </StyledButtonContainer>
     </section>
   );
 }
