@@ -1,54 +1,36 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { v4 as uuid } from 'uuid';
 
 import DoublePage from './DoublePage';
 
 /**
- * Inject an id property per page to be used as a key prop
- * during rendering
+ * Return an array of <= 2 elements to be used to display a
+ * Book view
  *
- * @param {array} pages - an array of page objects
- * @returns a new array of page objects each containing an id property
+ * @param {Array} pages - an array of page objects
+ * @param {number} startIdx - index to begin slice
+ * @param {number} pagesPerView - maximum size of slice
+ * @returns an array of <= 2 elements
  */
-function injectUUIDPerPage(pages) {
+function extractDoublePage(originalPages, startIdx, pagesPerView = 2) {
+  // Add 1 to ensure slice is at least two elements
+  const pages = originalPages.slice(startIdx, startIdx + pagesPerView);
+
+  // Provide a unique value for react 'key' prop
   return pages.map((page) => ({ id: uuid(), ...page }));
 }
 
-/**
- * Build up a matrix with subarrays of <= 2 elements to be used
- * to build up a two page view
- *
- * @param {*} pages - an array of page objects
- * @returns a matrix with subarrays of <= 2 elements
- */
-function extractDoublePage(originalPages) {
-  const pages = injectUUIDPerPage(originalPages);
-  const doublePages = [];
-
-  for (let i = 0; i < pages.length; i++) {
-    const doublePage = [];
-    const windowLength = i + 2;
-    for (let j = i; j < windowLength && j < pages.length; j++) {
-      doublePage.push(pages[j]);
-      i = j;
-    }
-
-    doublePages.push(doublePage);
-  }
-
-  return doublePages;
-}
-
 function List({ pages }) {
-  // Don't re-run extractDoublePage if pages has not changed
-  const doublePages = useMemo(() => extractDoublePage(pages), [pages]);
   const [pageIdx, setPageIdx] = useState(0);
+  const doublePages = extractDoublePage(pages, pageIdx);
 
   const incrementPageNum = () => {
-    if (pageIdx < doublePages.length) setPageIdx(pageIdx + 1);
+    const newIdx = pageIdx + 2;
+    if (newIdx <= pages[pages.length - 1].pageIndex) setPageIdx(newIdx);
   };
   const decrementPageNum = () => {
-    if (pageIdx > 0) setPageIdx(pageIdx - 1);
+    const newIdx = pageIdx - 2;
+    if (newIdx >= 0) setPageIdx(newIdx);
   };
 
   return (
@@ -59,7 +41,7 @@ function List({ pages }) {
       <button type="button" onClick={incrementPageNum}>
         Next
       </button>
-      <DoublePage doublePage={doublePages[pageIdx]} />
+      <DoublePage doublePage={doublePages} />
     </section>
   );
 }

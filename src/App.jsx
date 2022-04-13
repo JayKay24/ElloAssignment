@@ -2,7 +2,7 @@ import React from 'react';
 // eslint-disable-next-line prettier/prettier
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
-import Content from './components/Content';
+import Book from './components/Book';
 import ErrorBoundary from './components/ErrorBoundary';
 
 import StyledContainer from './components/styled/StyledContainer';
@@ -24,7 +24,7 @@ function App() {
         </StyledHeader>
         <StyledMain>
           <ErrorBoundary>
-            <Content />
+            <Book />
           </ErrorBoundary>
         </StyledMain>
       </StyledContainer>
