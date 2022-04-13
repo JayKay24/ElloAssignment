@@ -18,7 +18,7 @@ const BOOK = gql`
   }
 `;
 
-function Content() {
+function Book() {
   const { loading: bookLoading, error: bookError, data } = useQuery(BOOK);
 
   const book = data && data.book;
@@ -30,4 +30,4 @@ function Content() {
   return <List pages={book.pages} />;
 }
 
-export default Content;
+export default Book;
