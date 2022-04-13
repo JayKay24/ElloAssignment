@@ -20,6 +20,7 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/forbid-prop-types": 0,
     "react/prop-types": 0,
-    "no-plusplus": "off"
+    "no-plusplus": "off",
+    "no-restricted-syntax": "off"
   }
 }
