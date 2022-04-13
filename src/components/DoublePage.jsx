@@ -8,7 +8,7 @@ function DoublePage({ doublePage }) {
   return (
     <StyledDoublePage>
       {doublePage.map((page) => (
-        <Page key={page.id} />
+        <Page key={page.id} page={page} />
       ))}
     </StyledDoublePage>
   );
