@@ -44,3 +44,4 @@ function Book() {
 }
 
 export default Book;
+export { BOOK };
