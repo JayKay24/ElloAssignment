@@ -41,8 +41,12 @@ function List({ pages }) {
         <section>
           <DoublePage doublePage={doublePages} />
           <StyledButtonContainer>
-            <StyledButtonLarge onClick={decrementPageNum}>Prev</StyledButtonLarge>
-            <StyledButtonLarge onClick={incrementPageNum}>Next</StyledButtonLarge>
+            <StyledButtonLarge onClick={decrementPageNum} id="prev">
+              Prev
+            </StyledButtonLarge>
+            <StyledButtonLarge onClick={incrementPageNum} id="next">
+              Next
+            </StyledButtonLarge>
           </StyledButtonContainer>
         </section>
       </Route>

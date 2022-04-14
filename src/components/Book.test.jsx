@@ -38,6 +38,6 @@ it('renders the mocked data', async () => {
   const authorOutput = screen.getByText(authorRegex);
   expect(authorOutput).toBeInTheDocument();
 
-  const pattotOutput = screen.getByText(/parrot/i);
-  expect(pattotOutput).toBeInTheDocument();
+  const parrotOutput = screen.getByText(/parrot/i);
+  expect(parrotOutput).toBeInTheDocument();
 });

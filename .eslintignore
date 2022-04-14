@@ -2,3 +2,9 @@ node_modules
 public
 build
 .github
+cypress/downloads
+cypress/fixtures
+cypress/integration
+cypress/plugins
+cypress/support
+cypress/videos
