@@ -6,6 +6,10 @@ const StyledContainer = styled.div`
   height: 100vh;
   padding: 20px;
   margin: 0;
+
+  @media only screen and (max-width: 570px) {
+    height: 150vh;
+  }
 `;
 
 export default StyledContainer;

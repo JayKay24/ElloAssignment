@@ -6,7 +6,7 @@ const StyledPage = styled.div`
   display: flex;
   font-size: 1.5rem;
   flex-wrap: wrap;
-  height: 20vh;
+  height: 30vh;
   justify-content: center;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -16,6 +16,11 @@ const StyledPage = styled.div`
 
   > span {
     display: inline-block;
+  }
+
+  @media only screen and (max-width: 570px) {
+    height: 44vh;
+    width: 100%;
   }
 `;
 
