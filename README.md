@@ -22,8 +22,8 @@ $ git clone git@github.com:JayKay24/ElloAssignment.git
 ### Running the tests
 
 ```
-$ npm run test:ci
-$ npm run cy:run
+$ npm run test:ci // unit tests
+$ npm run cy:run // e2e tests
 ```
 
 ### Running the application locally
