@@ -4,6 +4,8 @@
 
 Challenge found [here](https://github.com/ElloTechnology/full-stack-test)
 
+The Application is hosted [here](https://elloreactgqlchallenge.azurewebsites.net/).
+
 - [x] Challenge 1
 - [x] Challenge 2
 
