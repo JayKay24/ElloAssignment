@@ -1,5 +1,3 @@
-![test-ello-challenge](https://github.com/JayKay24/ElloAssignment/actions/workflows/test-ello-challenge.yaml/badge.svg)
-
 # Ello - Full Stack Engineer Coding Challenge Solution
 
 Challenge found [here](https://github.com/ElloTechnology/full-stack-test)
